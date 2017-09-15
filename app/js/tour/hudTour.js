@@ -63,7 +63,7 @@ const meTour = new Tour({ //jshint ignore:line
     {
       element: "#tourstop-hud",
       title: "HUD",
-      content: "Opens HUD (heads up display) where your bookmarks are stored. Think of HUD like the home screen on a smart phone.",
+      content: "Opens HUD (heads up display) where your bookmarked apps are stored, and can easily be organized and launched. Think of HUD as your homepage for favorite apps.",
       placement: "bottom",
       backdropContainer: ".navbar-fixed-top",
       backdropPadding: 0,
@@ -85,7 +85,7 @@ const meTour = new Tour({ //jshint ignore:line
     {
       element: "#tourstop-center",
       title: "Center",
-      content: "Opens Center where you can search for listings to bookmark to your HUD or open in Webtop.",
+      content: "Opens the Center where you can search and discover app listings from across the IC. You can bookmark listings to your HUD and you can also launch apps into a seperate tab directly from the Center.",
       placement: "bottom",
       backdropContainer: ".navbar-fixed-top",
       backdropPadding: 0
@@ -94,7 +94,7 @@ const meTour = new Tour({ //jshint ignore:line
     {
       element: "#tourstop-webtop",
       title: "Webtop",
-      content: "Opens Webtop, your customizable workspace within the platform.",
+      content: "Opens the Webtop, a virtual desktop environment. It allows you to run widgets in a single window, and save your custom workflows as dashboards.",
       placement: "bottom",
       backdropContainer: ".navbar-fixed-top",
       backdropPadding: 0
@@ -112,7 +112,7 @@ const meTour = new Tour({ //jshint ignore:line
     {
       element: "#tourstop-help",
       title: "Help",
-      content: "Access help videos and articles explaining how to use the platform.",
+      content: "Access help videos and articles explaining how to use the platform. You can also contact the Help Desk or take this tour again from here.",
       placement: "bottom",
       backdropContainer: ".navbar-fixed-top",
       backdropPadding: 0
@@ -121,7 +121,7 @@ const meTour = new Tour({ //jshint ignore:line
     {
       element: "#tourstop-global-menu",
       title: "Global Menu",
-      content: "The global menu provides a list of resources you can use to submit listings, manage your listings, view your profile, contact us, etc.",
+      content: "The main menu provides a list of resources you can use to view your profile and settings, contact us, manage your listings, etc.",
       placement: "left",
       backdropContainer: ".navbar-fixed-top",
       backdropPadding: 0,
