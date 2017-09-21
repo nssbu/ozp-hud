@@ -17,7 +17,8 @@ var Add = require('./components/folder/Add.jsx');
 var ProfileActions = require('ozp-react-commons/actions/ProfileActions');
 
 var {
-  API_URL,
+  //METRICS_URL, //TODO: Remove this line?
+  //API_URL, //TODO: Remove this line?
   APP_TITLE,
   IE_REDIRECT_URL
 } = require('ozp-react-commons/OzoneConfig');
