@@ -12,7 +12,7 @@ var CurrentFolderStore = require('../../store/CurrentFolder');
 var LibraryActions = require('../../actions/Library');
 var Constants = require('../../Constants');
 var DragAndDropUtils = require('../../util/DragAndDrop');
-
+var {HUD_URL} = require('OzoneConfig'); //TODO: Download the `OzoneConfig` package?
 var Folder = require('../../api/Folder');
 
 var FolderTitle = require('./FolderTitle.jsx');

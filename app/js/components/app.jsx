@@ -20,14 +20,15 @@ var App = React.createClass({
                 bottom : '0%'
             });
         });
-
-        window.addEventListener('focus', LibraryActions.fetchLibrary);
+        //TODO: Delete the next line?
+        //window.addEventListener('focus', LibraryActions.fetchLibrary);
         LibraryActions.fetchLibrary();
     },
 
     componentDidUnmount: function () {
         $(document).off('show.bs.modal', '.modal');
-        window.removeEventListener('focus', LibraryActions.fetchLibrary);
+        //TODO: Delete the next line?
+        //window.removeEventListener('focus', LibraryActions.fetchLibrary);
     },
 
     render: function () {
