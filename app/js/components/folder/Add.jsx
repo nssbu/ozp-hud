@@ -12,10 +12,23 @@ var FolderModal = React.createClass({
 
     componentDidMount: function() {
       var folderName = decodeURIComponent(this.props.params.name);
-      var ids = this.props.params.ids;
-      var idList = ids ?ids.split(',').map(Number) : [];
+      var ids = decodeURIComponent(this.props.params.ids);
 
-      LibraryActions.makeSharedFolder(folderName, idList);
+      ids = JSON.parse(
+        JSON.parse(ids)
+      );
+
+      var request = [];
+      ids.map(id => {
+      	request.push({
+          listing: {
+            id: id.id
+          },
+          folder: folderName
+        });
+      });
+
+      LibraryActions.makeSharedFolder(request);
     },
 
     render: function() {

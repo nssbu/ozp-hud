@@ -144,13 +144,6 @@
     }
 }
 
-.FolderTile__actionMenuButton {
-    @extend .LibraryTile__actionMenuButton;
-   
-        border-radius: 0px 4px 0px 0px;
-
-}
-
 .LibraryTile__actionMenu {
     position: absolute;
     top: 1px;
@@ -177,12 +170,6 @@
             }
         }
     }
-}
-
-.FolderTile__actionMenu {
-    @extend .LibraryTile__actionMenu;
-    top: 2px;
-    right: 2px;
 }
 
 .LibraryTile__actionMenu > input:checked + .LibraryTile__actionMenuButton {
