@@ -16,10 +16,7 @@ module.exports.LibraryApi = {
             });
     },
 
-    share: function(folder, peer, message, fn) {
-      if(message.replace(/\s/g, '').length === 0){
-        message = 'shared folder';
-      }
+    share: function(folder, peer, message) {
       return $.ajax({
           type: 'POST',
           dataType: 'json',
@@ -35,21 +32,6 @@ module.exports.LibraryApi = {
               "folder_name": folder
             }
           })
-      }).fail(function(response) {
-          if(peer === '') {
-              window.alert('Username not entered');
-          } else if(response.responseJSON &&
-              response.responseJSON.non_field_errors &&
-              response.responseJSON.non_field_errors[0] === 'Valid User is Required'){
-              window.alert('The username "' + peer + '" was not found.  Please check the spelling');
-          } else {
-              window.alert('Error sharing folder.  Please try again.');
-          }
-          console.log('Error sharing folder: ', response.status,
-                  response.responseJSON || response.responseText);
-      }).done(() => {
-          fn();
-          LibraryActions.fetchLibrary();
       });
     },
 
@@ -73,23 +55,22 @@ module.exports.LibraryApi = {
             url: url + 'update_all/',
             data: JSON.stringify(libraryEntriesList)
         }).fail(function(response) {
-            console.log('Error updating library', response.status,
+            console.error('Error updating library', response.status,
                     response.responseJSON || response.responseText);
         }).done(() => {
             LibraryActions.fetchLibrary();
         });
     },
 
-    create: function(entry, cb, errorCb) {
+    create: function(entry, cb) {
         return $.ajax({
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',
-            url: url + 'create_batch/',
+            url: url,
             data: JSON.stringify(entry)
-        }).fail(res => {if(errorCb){errorCb(res);}
-      }).success(res => {if(cb){cb(res);}
-            LibraryActions.fetchLibrary();
+        }).done(res => {
+          cb(res);
         });
     },
 
@@ -100,17 +81,6 @@ module.exports.LibraryApi = {
             url: url + `${encodeURIComponent(libraryId)}/`
         }).fail(function(response) {
             console.error('Error removing Listing with id ' + libraryId + ' from library',
-                    response.status, response.responseJSON || response.responseText);
-        });
-    },
-
-    deleteFolder: function(appId) {
-        return $.ajax({
-            type: 'DELETE',
-            dataType: 'json',
-            url: url + `${encodeURIComponent(appId)}/` + 'delete_folder/'
-        }).fail(function(response) {
-            console.error('Error removing folder containing Listing with id ' + appId + ' from library',
                     response.status, response.responseJSON || response.responseText);
         });
     }

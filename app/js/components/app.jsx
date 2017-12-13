@@ -21,11 +21,13 @@ var App = React.createClass({
             });
         });
 
+        window.addEventListener('focus', LibraryActions.fetchLibrary);
         LibraryActions.fetchLibrary();
     },
 
     componentDidUnmount: function () {
         $(document).off('show.bs.modal', '.modal');
+        window.removeEventListener('focus', LibraryActions.fetchLibrary);
     },
 
     render: function () {

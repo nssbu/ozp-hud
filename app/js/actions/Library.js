@@ -53,12 +53,6 @@ module.exports = Reflux.createActions([
     'shareFolder',
 
     /**
-     * Remove a folder from a user
-     * @param {object} id of the application whose containing folder should be deleted
-     */
-    'deleteFolder',
-
-    /**
      * Indicate that a new folder has been created with the specified auto-generated name
      * @param name The current name for the new folder
      */
